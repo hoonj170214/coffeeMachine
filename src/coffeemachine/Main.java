@@ -68,9 +68,11 @@ public class Main {
                 status.PrintStatus();
 
             } else if (option == 3) {
+
                 System.out.print("돈을 꺼내기 : ");
                 status.money -= sc.nextInt();
                 status.PrintStatus();
+
             } else if (option == 4) {
                 System.out.println("커피머신이 종료되었습니다.");
                 run = false;

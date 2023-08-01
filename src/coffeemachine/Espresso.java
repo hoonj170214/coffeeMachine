@@ -1,6 +1,6 @@
 package coffeemachine;
 
-public class Espresso {
+public class Espresso extends Menu {
 
     public int cup;
     private String Espresso;

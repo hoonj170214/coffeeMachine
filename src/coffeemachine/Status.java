@@ -1,7 +1,7 @@
 package coffeemachine;
 
 import java.util.Scanner;
-
+// 현재 커피머신의 상태를 나타내는 클래스
 public class Status {
     //필드
     static int water;
@@ -24,6 +24,8 @@ public class Status {
     }
 
     //메서드
+    // 현재 커피 머신의 상태를 나타내는 메소드
+
     void PrintStatus(){
         System.out.println("남은 재료와 돈 상태 : ");
         System.out.println("물 : " + water + " ml");

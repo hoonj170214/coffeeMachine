@@ -1,6 +1,6 @@
 package coffeemachine;
 
-public class Cappuccino {
+public class Cappuccino extends Menu {
     static String name = "카푸치노";
     public int cup;
     int money = 6000;

@@ -1,6 +1,6 @@
 package coffeemachine;
 
-public class Latte {
+public class Latte extends Menu {
     public static int cup;
     static String name = "라떼";
     static int money = 7000;
@@ -14,6 +14,7 @@ public class Latte {
         this.money = money;
         this.water = water;
         this.coffeeBean = coffeeBean;
+        this.milk = milk;
     }
 
 
