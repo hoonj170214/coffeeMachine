@@ -1,6 +1,7 @@
 package coffeemachine;
 
 public class Latte {
+    public static int cup;
     static String name = "라떼";
     static int money = 7000;
     static int water = 350;

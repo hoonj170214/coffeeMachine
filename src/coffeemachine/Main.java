@@ -19,7 +19,9 @@ public class Main {
 
         boolean run = true;
 
-        System.out.print("커피머신이 가동되었습니다.");
+        System.out.println("커피머신이 가동되었습니다.");
+        System.out.println("현재 커피머신 상태 : ");
+        status.PrintStatus();
         while (run) {
             System.out.println("==========옵션을 선택하세요.==========");
             System.out.println("1. 구매 , 2. 채우기, 3. 가져가기, 4.종료");
@@ -30,34 +32,44 @@ public class Main {
             if (option == 1) {
                 Purchase();
                 int menu = sc.nextInt();
+                try{
                 if(menu ==1) {
                     System.out.println("커피를 구매하였습니다. 감사합니다.");
                     System.out.println(Espresso.name + "가 준비되었습니다. 맛있게 드세요!");
+                    status.Espresso();
                     status.PrintStatus();
                 }else if(menu ==2){
                 System.out.println("커피를 구매하였습니다. 감사합니다.");
                 System.out.println(Latte.name + "가 준비되었습니다. 맛있게 드세요!");
-                    status.PrintStatus();
+                    status.Latte();
+                status.PrintStatus();
                 }else if(menu ==3) {
                     System.out.println("커피를 구매하였습니다. 감사합니다.");
                     System.out.println(Cappuccino.name + "가 준비되었습니다. 맛있게 드세요!");
+                    status.Cappuccino();
                     status.PrintStatus();
                 }
-//                if (coffee > out) {
-//                    System.out.println("요금이 부족합니다.");
-//                }
+                }catch(Exception e){
+               if (status.coffeeBean < 0 | status.water<0 | status.milk<0 |status.cup<0) {
+                   System.out.println("재료가 부족합니다.");
+                }
+                }
 
-//            } else if (option == 2) {
-//                out = in - cocoa;
-//                System.out.println("맛있게 드세요.");
-//                if (cocoa > out) {
-//                    System.out.println("요금이 부족합니다.");
-//                }
+            } else if (option == 2) {
+
+                System.out.println("추가할 물의 양을 입력하세요.");
+                status.water += (sc.nextInt());
+                System.out.println("추가할 우유의 양을 입력하세요.");
+                status.milk += (sc.nextInt());
+                System.out.println("추가할 원두의 양을 입력하세요.");
+                status.coffeeBean += (sc.nextInt());
+                System.out.println("추가할 일회용 컵의 양을 입력하세요.");
+                status.cup += (sc.nextInt());
+                status.PrintStatus();
 
             } else if (option == 3) {
                 System.out.print("돈을 꺼내기 : ");
-                int withdraw = sc.nextInt();
-                money = Status.Withdraw(withdraw);
+                status.money -= sc.nextInt();
                 status.PrintStatus();
             } else if (option == 4) {
                 System.out.println("커피머신이 종료되었습니다.");

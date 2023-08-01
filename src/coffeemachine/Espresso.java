@@ -2,6 +2,7 @@ package coffeemachine;
 
 public class Espresso {
 
+    public int cup;
     private String Espresso;
     //필드
     static String name = "에스프레소";
@@ -56,7 +57,4 @@ public class Espresso {
         Espresso = espresso;
     }
 
-    public void setName(String name) {
-        Espresso.name = name;
-    }
 }

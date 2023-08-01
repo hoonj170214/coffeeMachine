@@ -26,16 +26,17 @@ public class Status {
     //메서드
     void PrintStatus(){
         System.out.println("남은 재료와 돈 상태 : ");
-        System.out.println("물 : " + water);
-        System.out.println("우유 : " + milk);
-        System.out.println("원두 : " + coffeeBean);
-        System.out.println("일회용 컵 " + cup);
-        System.out.println("돈 : " + money);
+        System.out.println("물 : " + water + " ml");
+        System.out.println("우유 : " + milk + " ml");
+        System.out.println("원두 : " + coffeeBean + " g");
+        System.out.println("일회용 컵 " + cup + " 개");
+        System.out.println("돈 : " + money + " 원");
     }
     void Espresso(){
         Status.water-=espresso.water;
         Status.coffeeBean-=espresso.coffeeBean;
         Status.money+=espresso.getMoney();
+        Status.cup --;
     }
 
     void Cappuccino(){
@@ -43,6 +44,8 @@ public class Status {
         Status.milk -= Cappuccino.milk;
         Status.coffeeBean -= Cappuccino.coffeeBean;
         Status.money += cappuccino.getMoney();
+        Status.cup --;
+
     }
 
     void Latte(){
@@ -50,6 +53,8 @@ public class Status {
         Status.milk -= Latte.milk;
         Status.coffeeBean -= Latte.coffeeBean;
         Status.money += Latte.getMoney();
+        Status.cup --;
+
     }
     static int Withdraw(int withdraw){
         System.out.println("출금할 돈을 입력해주세요.");
